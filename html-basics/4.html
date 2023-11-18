@@ -4,13 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+         * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #efefef;
+                font-family: 'Open Sans', sans-serif;
+            }
+            .top-nav {
+                background-color: #43281c;
+                color: #fbf2c0;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: normal;
+            }
+            .logo {
+                height: 25px;
+                position: relative;
+                top: 3px;
+            }
+            .page{
+                display: grid;
+                row-gap: 30px;
+                column-gap: 30px;
+                width: 100%;
+                padding: 30px;
+                margin: 0 auto;
+                grid-template-areas:
+                    "order-box-left payment"
+                    "total total";
+                grid-template-columns: 1fr 1fr;;
+            }
+            .box {
+                background-color: #eee1d5;
+                border-radius: 5px;
+                box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
+                padding: 15px;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            .order-box-title{
+                color: #885a2d;
+                font-weight: normal;
+                font-size: 16px;
+            }
+            
+            .payment{
+                display: grid;
+                grid-template-areas: "name-box"
+                "card-box"
+            }
+    </style>
 </head>
 <body>
-    <nav class="top-nav"><img src="https://btholt.github.io/complete-intro-to-web-dev-v3/images/coffee_masters_logo.png" alt="some coffee logo"> 
-        Coffee Masters
+    <nav class="top-nav">
+        <h1 class="brand">
+            <img class="logo" src="https://btholt.github.io/complete-intro-to-web-dev-v3/images/coffee_masters_logo.png" alt="some coffee logo"> 
+            Coffee Masters
+        </h1>
     </nav>
     <div class="page">
-       <section class="order-box-left">
+       <section class="order-box-left box">
             <h2 class="order-box-title">ITEMS</h2>
             <ul class="order-items">
                 <li class="item">
@@ -48,7 +108,7 @@
                 <input type="text" class="user-input" id="name">
                 </div>
             </div>
-            <div class="cc-box box">
+            <div class="card-box box">
                 <h2 class="box-title">PAYMENT</h2>
                 <div class="input-group">
                 <label class="user-input-label" for="cc">Card number</label>
